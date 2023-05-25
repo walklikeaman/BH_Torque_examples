@@ -13,6 +13,11 @@ terraform {
   }
 }
 
+variable "null_test" {
+  type = string
+  default = null
+}
+
 variable "aws_region" {
   type    = string
   default = "us-west-2"
