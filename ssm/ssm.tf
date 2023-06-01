@@ -1,7 +1,6 @@
 
 provider "aws" {
   region  = var.aws_region
-
 }
 
 terraform {
@@ -12,7 +11,7 @@ terraform {
     }
   }
 }
-# Test
+
 variable "aws_region" {
   type    = string
   default = "us-west-2"
@@ -29,18 +28,18 @@ variable "value" {
   sensitive = true
 }
 
-resource "aws_ssm_parameter" "foo" {
-  name  = "name-${var.name}"
-  # type  = "SecureString"
+resource "aws_ssm_parameter" "se_exercise_ssm_parameter" {
+  name  = "${var.name}"
   type  = "String"
-  value = "value-${var.value}"
-  tags = {
-    environment = "update"
-  }
+  value = "${var.value}"
 }
 
-output "ssm_value" {
-  value = aws_ssm_parameter.foo.value
+output "ssm_parameter_name" {
+  value = aws_ssm_parameter.se_exercise_ssm_parameter.name
+}
+
+output "ssm_parameter_value" {
+  value = aws_ssm_parameter.se_exercise_ssm_parameter.value
   sensitive = true
 }
 
