@@ -12,7 +12,7 @@ jobs:
       uses: QualiTorque/torque-start-environment@v1
       with:
         space: CandidateExercise-test	
-        blueprint_name: ssm
+        blueprint_name: autogen_ssm
         repository_name: qtorque
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 30
