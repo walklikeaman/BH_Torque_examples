@@ -11,13 +11,13 @@ jobs:
       id: start-environment
       uses: QualiTorque/torque-start-environment@v1
       with:
-        space: IB-SE-Candidate-Exercise
+        space: CandidateExercise-test	
         blueprint_name: ssm
+        source:
+          - repository_name: qtorque
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 30
         timeout: 30
-        #artifacts: 'flask-app=latest/flaskapp.latest.tar.gz'
-        #inputs: 'PORT=8080,AWS_INSTANCE_TYPE=m5.large'
 
     - name: Delay for 6 minutes
       run: sleep 360
@@ -25,6 +25,6 @@ jobs:
     - name: End Torque Environment
       uses: QualiTorque/torque-end-environment@v1
       with:
-        space: IB-SE-Candidate-Exercise
+        space: CandidateExercise-test
         environment_id: ${{ steps.start-environment.outputs.environment_id }}
         torque_token: ${{ secrets.TORQUE_TOKEN }}
