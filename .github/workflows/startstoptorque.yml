@@ -13,8 +13,7 @@ jobs:
       with:
         space: CandidateExercise-test	
         blueprint_name: ssm
-        source:
-          - repository_name: qtorque
+        repository_name: qtorque
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 30
         timeout: 30
