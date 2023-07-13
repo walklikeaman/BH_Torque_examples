@@ -34,7 +34,7 @@ resource "aws_ssm_parameter" "se_exercise_ssm_parameter" {
   value = "${var.value}"
 }
 
-output "ssm_parameter_name" {
+output "ssm_parameter_name"  {
   value = aws_ssm_parameter.se_exercise_ssm_parameter.name
 }
 
