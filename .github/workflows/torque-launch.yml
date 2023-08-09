@@ -2,13 +2,6 @@ name: Manually Triggered Torque Blueprint Launch
 
 on:
   workflow_dispatch:
-    inputs:
-      custom_name:
-        description: 'Input Name for Blueprint'     
-        required: true
-      custom_value:
-        description: 'Input Value for Blueprint'     
-        required: true
 
 jobs:
   start-torque-environment:
@@ -24,4 +17,3 @@ jobs:
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 120
         timeout: 30
-        inputs: 'name=${{ github.event.inputs.custom_name }},value=${{ github.event.inputs.custom_value }}'
