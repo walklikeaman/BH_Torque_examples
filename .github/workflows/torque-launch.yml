@@ -17,7 +17,7 @@ jobs:
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 30
         timeout: 30
-        inputs: 'name=${{ github.run_number }},value=value_${{ github.run_number }}'
+        inputs: 'name=${{ github.run_number }},value=value_${{ github.run_number }},agent=Quali'
 
     - name: Delay for 6 minutes
       run: sleep 360
