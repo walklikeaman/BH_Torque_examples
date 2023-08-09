@@ -1,4 +1,4 @@
-name: Torque Environment Pipeline
+name: Manually Triggered Torque Blueprint Launch
 
 on:
   workflow_dispatch:
